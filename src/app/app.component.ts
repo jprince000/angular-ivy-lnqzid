@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { pipe, from } from "rxjs";
+import { pipe, from, of } from "rxjs";
 import { concatMap, filter, finalize, map, tap } from 'rxjs/operators';
 
 @Component({
@@ -22,7 +22,20 @@ export class AppComponent  {
   }
 
   dateMe() {
-    console.log(new Date('booger').toISOString());
+    let a = [];
+    const out = [];
+    of(0,1,2,3,4,5,6,7,8,9)
+    .pipe(finalize(() => {
+      out.push(a);
+      console.log(out);
+    }))
+    .subscribe(val => {
+      a.push(val);
+      if (a.length === 3) {
+        out.push(a);
+        a = [];
+      }
+    })
   }
 
 
