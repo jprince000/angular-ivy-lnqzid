@@ -1,3 +1,8 @@
 p {
   font-family: Lato;
 }
+
+button {
+  min-width: 150px;
+  text-align: left;
+}
