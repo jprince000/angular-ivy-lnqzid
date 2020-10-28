@@ -3,5 +3,9 @@
 
 <button (click)="makeItHappen()">Make it happen</button>
 <div>
-<button (click)="dateMe()">Date</button>
+	<button (click)="dateMe()">Date</button>
+</div>
+
+<div>
+	<button [disabled]="one  && two">Test</button>
 </div>

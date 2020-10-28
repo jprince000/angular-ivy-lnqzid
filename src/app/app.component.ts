@@ -10,6 +10,9 @@ import { concatMap, filter, finalize, map, tap } from 'rxjs/operators';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
 
+  one = true;
+  two = false;
+
   makeItHappen() {
     from([1,2,3])
     .pipe(
